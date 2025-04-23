@@ -1,0 +1,20 @@
+
+      <table>
+        <tr>
+          <th>Nazwa</th>
+          <th>Cena</th>
+          <th>Data utworzenia</th>
+          <th>Dodaj do koszyka</th>
+          <th>Liczba sztuk w koszyku</th>
+        </tr>
+        <tr *ngFor="let produkt of produkty" [ngStyle]="{ 'background-color': produkt.czyPromocja ? '#ffdddd' : 'transparent' }">
+          <td>{{ produkt.nazwa }}</td>
+          <td>{{ produkt.cena | currency: 'PLN':'symbol' }}</td>
+          <td>{{ produkt.dataUtworzenia | date: 'dd.MM.yyyy' }}</td>
+          <td><button (click)="dodajDoKoszyka(produkt)">Dodaj</button></td>
+          <td>{{ produkt.liczbaWSztukach }}</td>
+        </tr>
+      </table>
+
+
+  
